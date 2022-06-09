@@ -30,6 +30,16 @@ export class HeroService {
       );
   }
 
+  /** GET top3 heroes from the server */
+  getTopHeroes(): Observable<Hero[]> {
+    return this.http.get<Hero[]>(`${this.heroesUrl}`)
+      .pipe(
+        map(heroes => heroes.slice(-3)),
+        tap(_ => this.log('fetched top3 heroes')),
+        catchError(this.handleError<Hero[]>('getTopHeroes', []))
+      );
+  }
+
   /** GET hero by id. Return `undefined` when id not found */
   getHeroNo404<Data>(id: number): Observable<Hero> {
     const url = `${this.heroesUrl}/?id=${id}`;
