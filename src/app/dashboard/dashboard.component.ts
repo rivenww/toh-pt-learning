@@ -17,7 +17,8 @@ export class DashboardComponent implements OnInit {
   }
 
   getHeroes(): void {
+    // I don't know why the example says top heroes should slice from 1 to 5, it should be 0 to 4.
     this.heroService.getHeroes()
-      .subscribe(heroes => this.heroes = heroes.slice(1, 5));
+      .subscribe(heroes => this.heroes = heroes.slice(0, 4));
   }
 }
