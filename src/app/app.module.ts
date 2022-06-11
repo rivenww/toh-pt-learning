@@ -22,14 +22,7 @@ import { TopHeroesModule } from "./top-heroes/top-heroes.module";
     FormsModule,
     AppRoutingModule,
     TopHeroesModule,
-    HttpClientModule,
-
-    // The HttpClientInMemoryWebApiModule module intercepts HTTP requests
-    // and returns simulated server responses.
-    // Remove it when a real server is ready to receive requests.
-    HttpClientInMemoryWebApiModule.forRoot(
-      InMemoryDataService, { dataEncapsulation: false }
-    )
+    HttpClientModule
   ],
   declarations: [
     AppComponent,
