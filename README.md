@@ -4,8 +4,6 @@
 
 ### Setting Up a Project
 
-Install the Angular CLI globally:
-
 ```
 npm install
 ```
